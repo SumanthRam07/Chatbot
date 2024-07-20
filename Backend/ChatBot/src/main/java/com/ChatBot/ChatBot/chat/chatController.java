@@ -20,7 +20,8 @@ public class chatController {
 
     }
 
-
+    @MessageMapping("/chat.addUser")
+    @SendTo("/topic/public")
     public  ChatMessage addUser(@Payload ChatMessage chatMessage , SimpMessageHeaderAccessor headerAccessor)
     {
          //Adding username in websocket session
